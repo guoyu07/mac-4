@@ -60,4 +60,25 @@ brew安装的svn软路径是：
 
 注：如果你用的oh-my-zsh，需要修改.zshrc文件而不是.bash_profile
     
-    export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
+    export PATH="/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    
+### 更新git
+
+和svn类似，mac osx自带的git也比较旧，用类似的方法可将git更新到最新版本
+
+```bash
+brew doctor
+brew install git
+```
+
+设置环境变量
+
+打开.bash_profile文件，添加以下行
+
+    export PATH=/usr/local/git/bin:$PATH
+
+注：如果你用的oh-my-zsh，需要修改.zshrc文件而不是.bash_profile
+    
+    export PATH="/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+
