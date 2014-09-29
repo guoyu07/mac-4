@@ -3,6 +3,11 @@ mac
 
 The mac way
 
+### 玩mac必备 - 安装oh-my-zsh
+
+oh-my-zsh让你的terminal更好看，附带的各种插件（例如git插件）让你的terminal更便捷强悍。
+具体的安装办法请猛击 [这里！！！](https://github.com/robbyrussell/oh-my-zsh)
+
 ### 玩mac必备 - 安装mac下的包管理器homebrew
 
 ```bash
