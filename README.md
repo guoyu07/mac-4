@@ -40,15 +40,19 @@ brew doctor
 brew install svn
 ```
 
-brew安装的svn路径是：
+brew安装的svn软路径是：
 
-    /usr/local/opt/subversion/
-  
+    /usr/local/bin/svn/
+
+用brew list svn命令可以查看实际的安装路径为：
+
+    /usr/local/Cellar/subversion/
+
 而系统自带的svn路径是：
 
     /usr/bin/svn
   
 为了覆盖系统的svn，我们将新svn的路径添加到PATH环境变量中：
 
-    export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+    export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
