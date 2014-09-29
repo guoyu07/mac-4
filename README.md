@@ -52,7 +52,12 @@ brew安装的svn软路径是：
 
     /usr/bin/svn
   
-为了覆盖系统的svn，我们将新svn的路径添加到PATH环境变量中：
+为了覆盖系统的svn，我们将新svn的路径添加到PATH环境变量中,并放到/usr/bin前面：
+
+打开.bash_profile文件，添加以下行
 
     export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
+注：如果你用的oh-my-zsh，需要修改.zshrc文件而不是.bash_profile
+    
+    export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
