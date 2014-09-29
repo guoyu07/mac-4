@@ -104,4 +104,8 @@ sudo chmod 777 /usr/local/lib/dtrace/node.d
 brew link node
 ```
 
+如果还不行，请运行：
 
+```bash
+sudo brew postinstall node
+```
