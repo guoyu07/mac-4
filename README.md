@@ -80,5 +80,28 @@ brew install git
 注：如果你用的oh-my-zsh，需要修改.zshrc文件而不是.bash_profile
     
     export PATH="/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    
+    
+### 更新node
+
+系统自带的node和brew安装的node在同一个位置，直接brew install node安装完会报错，我做的操作如下
+
+
+```bash
+brew doctor
+npm uninstall npm -g
+
+brew uninstall node
+
+brew install node
+
+sudo rm -rf /usr/local/lib/dtrace/node.d
+
+brew link node (caused error with permissions)
+
+sudo chmod 777 /usr/local/lib/dtrace/node.d
+
+brew link node
+```
 
 
