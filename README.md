@@ -84,26 +84,31 @@ brew install git
     
 ### 更新node
 
-系统自带的node和brew安装的node在同一个位置，直接brew install node安装完会报错，我做的操作如下
+系统自带的node和brew安装的node在同一个位置，直接brew install node安装完会报很多的错误，所以不建议更新系统自带的node!!
+
+我做的操作如下
 
 
 ```bash
+
 brew doctor
 
-npm uninstall npm -g
-
-brew uninstall node
-
-brew install node
-
+" delete all the old staff
+sudo rm -rf /usr/local/lib/node_modules
 sudo rm -rf /usr/local/include/node
 sudo rm -rf /usr/local/lib/dtrace/node.d
+sudo rm /usr/local/share/man/man1/node.1
 
-brew link node (caused error with permissions)
+" clear all broken symlinks
+brew prune
 
-sudo chmod 777 /usr/local/lib/dtrace/node.d
+" install node via brew
+brew install node
 
-brew link node
+" if brew link node cause error with permissions
+
+" run： sudo chmod 777 /usr/local/lib/dtrace/node.d
+
 ```
 
 如果还不行，请运行：
