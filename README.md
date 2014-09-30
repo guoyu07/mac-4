@@ -89,12 +89,14 @@ brew install git
 
 ```bash
 brew doctor
+
 npm uninstall npm -g
 
 brew uninstall node
 
 brew install node
 
+sudo rm -rf /usr/local/lib/node
 sudo rm -rf /usr/local/lib/dtrace/node.d
 
 brew link node (caused error with permissions)
