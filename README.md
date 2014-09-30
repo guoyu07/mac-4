@@ -82,7 +82,7 @@ brew install git
     export PATH="/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin"
     
     
-### 更新node
+### 更新node（不推荐）
 
 系统自带的node和brew安装的node在同一个位置，直接brew install node安装完会报很多的错误，所以不建议更新系统自带的node!!
 
@@ -93,21 +93,21 @@ brew install git
 
 brew doctor
 
-" delete all the old staff
+#delete all the old staff
 sudo rm -rf /usr/local/lib/node_modules
 sudo rm -rf /usr/local/include/node
 sudo rm -rf /usr/local/lib/dtrace/node.d
 sudo rm /usr/local/share/man/man1/node.1
 
-" clear all broken symlinks
+#clear all broken symlinks
 brew prune
 
-" install node via brew
+#install node via brew
 brew install node
 
-" if brew link node cause error with permissions
+#if brew link node cause error with permissions
 
-" run： sudo chmod 777 /usr/local/lib/dtrace/node.d
+#run： sudo chmod 777 /usr/local/lib/dtrace/node.d
 
 ```
 
