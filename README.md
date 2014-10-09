@@ -151,7 +151,7 @@ sudo brew postinstall node
 
 学习使用markdown的小抄本：
 
-<iframe style="background:#eee;border:0;width:1000px;height:600px;padding:5px" frameborder="0" seamless src="http://assemble.io/docs/Cheatsheet-Markdown.html"/>
+[Markdown Cheatsheet](http://assemble.io/docs/Cheatsheet-Markdown.html)
 
 ### 更新rubygems
 
