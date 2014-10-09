@@ -139,6 +139,22 @@ sudo brew postinstall node
 
 ### 如何查看iPhone应用崩溃时的日志
 
-首先用iTunes的同步功能，将手机的各种信息同步至电脑
+首先用iTunes的同步功能，将手机的各种信息同步至电脑:
 
+![iTunes Sync](https://cdn.rawgit.com/mamboer/mac/master/assets/img/Picture-1.jpg)
 
+然后，崩溃日志可以在这里找到：
+
+        ~/Library/Logs/CrashReporter/MobileDevice/<DEVICE_NAME>
+
+### Markdown Cheatsheet
+
+学习使用markdown的小抄本：
+
+<iframe style="background:#eee;border:0;width:1000px;height:600px;padding:5px" frameborder="0" seamless src="http://assemble.io/docs/Cheatsheet-Markdown.html"/>
+
+### 更新rubygems
+
+```bash
+sudo gem update --system
+```
