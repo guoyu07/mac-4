@@ -158,3 +158,20 @@ sudo brew postinstall node
 ```bash
 sudo gem update --system
 ```
+
+### 更新vim
+
+```
+brew update
+brew doctor
+brew install vim
+```
+
+如果报以下错误：
+        Vim won't build with Python support on OS X 10.9.4 
+        
+则为10.10系统python的bug，具体可以见这里：[https://github.com/Homebrew/homebrew/issues/32066](https://github.com/Homebrew/homebrew/issues/32066)。暂无解决办法
+
+
+
+
