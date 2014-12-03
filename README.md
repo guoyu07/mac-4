@@ -188,15 +188,15 @@ brew install mongodb
 
   https://github.com/TomK32/mongodb-startupitem-osx  
 
-2.方法2 - 使用面板操作
+2. 方法2 - 使用面板操作
   
   https://github.com/remysaissy/mongodb-macosx-prefspane
 
-3.方法3 - LaunchDaemons
+3. 方法3 - LaunchDaemons
 
   https://github.com/mamboer/MongoDB-OSX-Launchctl
     
-4.方法4 - 手把手创建plist文件
+4. 方法4 - 手把手创建plist文件
 
   创建/Library/LaunchDaemons/org.mongo.mongod.plist
   
