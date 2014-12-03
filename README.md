@@ -173,5 +173,67 @@ brew install vim
 则为10.10系统python的bug，具体可以见这里：[https://github.com/Homebrew/homebrew/issues/32066](https://github.com/Homebrew/homebrew/issues/32066)。暂无解决办法
 
 
+### 安装mongodb 并开机启动
+
+安装
+
+```
+brew update
+brew install mongodb
+```
+
+开机启动
+
+1. 方法1 - StartupItem
+
+  https://github.com/TomK32/mongodb-startupitem-osx  
+
+2.方法2 - 使用面板操作
+  
+  https://github.com/remysaissy/mongodb-macosx-prefspane
+
+3.方法3 - LaunchDaemons
+
+  https://github.com/mamboer/MongoDB-OSX-Launchctl
+    
+4.方法4 - 手把手创建plist文件
+
+  创建/Library/LaunchDaemons/org.mongo.mongod.plist
+  
+  ```
+  <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>org.mongo.mongod</string>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/usr/local/bin/mongod</string>
+		<string>--dbpath</string>
+		<string>/var/lib/mongodb/</string>
+		<string>--logpath</string>
+		<string>/var/log/mongodb.log</string>
+	</array>
+</dict>
+</plist>
+  ```
+  创建log目录和数据文件目录
+  
+  ```
+  sudo touch /var/log/mongodb.log
+  sudo mkdir /var/lib/mongodb
+  ```
+  
+  运行mongod
+  
+  ```
+  sudo chown root:wheel /Library/LaunchDaemons/org.mongo.mongod.plist
+  sudo launchctl load /Library/LaunchDaemons/org.mongo.mongod.plist
+  sudo launchctl start org.mongo.mongod
+  ```
+
 
 
