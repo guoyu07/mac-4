@@ -286,5 +286,31 @@ brew install mongodb
   ln -sfv /usr/local/opt/nginx/*.plist ~/Library/LaunchAgents
   launchctl load ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist  
   ```
+  
+6. 修改默认的html站点目录
+  
+  默认的目录在这里：
+  
+  ```
+  /usr/local/Cellar/nginx/1.2.3/html
+  ```
+  
+  其中1.2.3是版本，根据实际按照情况不同
+  
+  跑去nginx.conf文件中修改默认目录：
+  
+  ```
+  server {
+    listen       80;
+    server_name  localhost;
 
+    #access_log  logs/host.access.log  main;
+
+    location / {
+        root   html;
+        index  index.html index.htm;
+    }
+  ```
+  
+  默认目录即上面的root的地方，可以修改成用户目录，例如: /User/lv/www
 
