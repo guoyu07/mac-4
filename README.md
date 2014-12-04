@@ -253,32 +253,32 @@ brew install mongodb
 
 1. 安装
 
-```
-brew update
-brew install nginx
-```
+  ```
+  brew update
+  brew install nginx
+  ```
 
 2. 启动
 
-```
-sudo nginx
-```
+  ```
+  sudo nginx
+  ```
 
 3. 测试
 
-默认端口是8080，可以打开http://localhost:8080测试是否安装并运行
+  默认端口是8080，可以打开http://localhost:8080测试是否安装并运行
 
-配置文件地址
+  配置文件地址
 
-	/usr/local/etc/nginx/nginx.conf
+  	/usr/local/etc/nginx/nginx.conf
 
 4. 修改端口listen
 
-```
-sudo nginx -s stop
-sudo vi /usr/local/etc/nginx/nginx.conf
-# 改完后重启
-sudo nginx
-```
+  ```
+  sudo nginx -s stop
+  sudo vi /usr/local/etc/nginx/nginx.conf
+  # 改完后重启
+  sudo nginx
+  ```
 
 
