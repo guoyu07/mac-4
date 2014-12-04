@@ -245,7 +245,7 @@ brew install mongodb
 
 原因是：
 
-	改host的话要走https,不然还会被reset
+	如果浏览器设置了代理，改host的话要走https,不然还会被reset
 
 参考文档：http://cn.v2ex.com/t/25512
 
