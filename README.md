@@ -234,6 +234,20 @@ brew install mongodb
   sudo launchctl load /Library/LaunchDaemons/org.mongo.mongod.plist
   sudo launchctl start org.mongo.mongod
   ```
+  
+### 修改host不生效
+
+```
+127.0.0.1 baidu.com
+```
+
+改完后，shell里面ping baidu.com 返回ip 127.0.0.1，但是浏览器输入baidu.com依然跳转至baidu。
+
+原因是：
+
+	改host的话要走https,不然还会被reset
+
+参考文档：http://cn.v2ex.com/t/25512
 
 
 
