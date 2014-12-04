@@ -280,5 +280,11 @@ brew install mongodb
   # 改完后重启
   sudo nginx
   ```
+5. 开机启动
+
+  ```
+  ln -sfv /usr/local/opt/nginx/*.plist ~/Library/LaunchAgents
+  launchctl load ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist  
+  ```
 
 
