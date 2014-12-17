@@ -251,6 +251,8 @@ brew install mongodb
 
 ### nginx web服务器的安装
 
+参考：http://mwholt.blogspot.com/2014/10/installing-nginx-on-mac-os-x-yosemite.html
+
 1. 安装
 
   ```
@@ -282,9 +284,15 @@ brew install mongodb
   ```
 5. 开机启动
 
-  ```
+  ``` bash
+  # symbolic link
   ln -sfv /usr/local/opt/nginx/*.plist ~/Library/LaunchAgents
-  launchctl load ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist  
+  # root permission
+  sudo chown root:wheel ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
+  # load
+  sudo launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
+  # start
+  sudo launchctl start ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
   ```
   
 6. 修改默认的html站点目录
