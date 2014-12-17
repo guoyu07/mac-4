@@ -293,6 +293,8 @@ brew install mongodb
   sudo launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
   # start
   sudo launchctl start ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
+  # detect whether nginx is running
+  ps aux | grep nginx
   ```
   
 6. 修改默认的html站点目录
