@@ -351,12 +351,9 @@ Or, if you don't want/need launchctl, you can just run:
     
     ln -s /usr/local/etc/nginx/sites-available/default.conf /usr/local/etc/nginx/sites-enabled/default.conf
     
-  E. 检测和重启nginx服务
+  E. 重启nginx服务
     
     ```
-    # test
-    nginx configtest
-    
     # restart
     nginx restart
     ````
