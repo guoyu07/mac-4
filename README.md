@@ -338,68 +338,17 @@ Or, if you don't want/need launchctl, you can just run:
   为了灵活配置nginx的站点，可以参考以下配置：
   A. 在/usr/local/etc/nginx/下面新建两个目录：sites-available和sites-enabled
   B. 在sites-available里面新建default.conf，将nginx.conf里面的默认站点配置的内容拷贝过去，并注释掉原内容
-      
-      default.conf内容：
-      
-      ``` 
-      server {
-        listen       80;
-        server_name  localhost;
-
-        #charset koi8-r;
-
-        #access_log  logs/host.access.log  main;
-
-        location / {
-            root   html;
-            index  index.html index.htm;
-        }
-
-        #error_page  404              /404.html;
-
-        # redirect server error pages to the static page /50x.html
-        #
-        error_page   500 502 503 504  /50x.html;
-        location = /50x.html {
-            root   html;
-        }
-
-        # proxy the PHP scripts to Apache listening on 127.0.0.1:80
-        #
-        #location ~ \.php$ {
-        #    proxy_pass   http://127.0.0.1;
-        #}
-
-        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
-        #
-        #location ~ \.php$ {
-        #    root           html;
-        #    fastcgi_pass   127.0.0.1:9000;
-        #    fastcgi_index  index.php;
-        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
-        #    include        fastcgi_params;
-        #}
-
-        # deny access to .htaccess files, if Apache's document root
-        # concurs with nginx's one
-        #
-        #location ~ /\.ht {
-        #    deny  all;
-        #}
-    }
-    ```
-    
-    C. 在nginx.conf里面增加以下内容
+  C. 在nginx.conf里面增加以下内容
     
     ```
     include /usr/local/etc/nginx/sites-enabled/*
     ```
     
-    D. 将sites-available目录下的配置建立symlink至site-enabled目录
+  D. 将sites-available目录下的配置建立symlink至site-enabled目录
     
     ln -s /usr/local/etc/nginx/sites-available/default.conf /usr/local/etc/nginx/sites-enabled/default.conf
     
-    E. 检测和重启nginx服务
+  E. 检测和重启nginx服务
     
     ```
     # test
