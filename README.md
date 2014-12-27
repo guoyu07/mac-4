@@ -336,8 +336,11 @@ Or, if you don't want/need launchctl, you can just run:
 5. 多站点配置
 
   为了灵活配置nginx的站点，可以参考以下配置：
+  
   A. 在/usr/local/etc/nginx/下面新建两个目录：sites-available和sites-enabled
+  
   B. 在sites-available里面新建default.conf，将nginx.conf里面的默认站点配置的内容拷贝过去，并注释掉原内容
+  
   C. 在nginx.conf里面增加以下内容
     
     ```
