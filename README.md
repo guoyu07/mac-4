@@ -204,7 +204,7 @@ ln -s /usr/local/bin/vim /usr/bin/vim
 
 ```bash
 # 在.bash_profile(或.zshrc，如果使用zsh的话)文件中添加vi别名
-alias vi = 'vim'
+alias vi='vim'
 ```
 
 [参考文章](http://mikegrouchy.com/blog/2012/05/compile-vim-with-python-support-on-osx-with-homebrew.html)
