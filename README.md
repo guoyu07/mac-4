@@ -344,12 +344,12 @@ Or, if you don't want/need launchctl, you can just run:
   C. 在nginx.conf里面增加以下内容
     
     ```
-    include /usr/local/etc/nginx/sites-enabled/*
+    include /usr/local/etc/nginx/sites-enabled/*;
     ```
     
   D. 将sites-available目录下的配置建立symlink至site-enabled目录
     
-    ln -s /usr/local/etc/nginx/sites-available/default.conf /usr/local/etc/nginx/sites-enabled/default.conf
+    ln -sfv /usr/local/etc/nginx/sites-available/default.conf /usr/local/etc/nginx/sites-enabled/default.conf
     
   E. 重启nginx服务
     
