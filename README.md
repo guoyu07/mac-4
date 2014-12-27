@@ -159,7 +159,7 @@ sudo brew postinstall node
 sudo gem update --system
 ```
 
-### 更新vim
+### 利用homebrew更新vim
 
 ```
 brew update
@@ -170,7 +170,36 @@ brew install vim
 如果报以下错误：
         Vim won't build with Python support on OS X 10.9.4 
         
-则为10.10系统python的bug，具体可以见这里：[https://github.com/Homebrew/homebrew/issues/32066](https://github.com/Homebrew/homebrew/issues/32066)。暂无解决办法
+则为10.10系统python的bug，具体可以见这里：[https://github.com/Homebrew/homebrew/issues/32066](https://github.com/Homebrew/homebrew/issues/32066)。暂无解决办法。
+
+安装完成后验证版本：
+
+```bash
+vim --version
+```
+
+如果发现还是旧的版本，说明新版vim的路径/usr/local/bin在环境变量中不存在，或者在老版本路径/usr/bin的后面。
+这个问题可以通过以下两种方法的其中一个来解决：
+
+Option 1: Update your path:
+In your .zshrc (you are using Zsh right?) or .bashrc update your path.
+
+```bash
+#this
+export PATH=/usr/bin:/usr/sbin
+#to this
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
+```
+
+Option 2: Move your old Vim and symlink the new one
+You can move the Vim that comes with OSX and Symlink the one brew installed
+
+```bash
+sudo mv /usr/bin/vim /usr/bin/oldvim
+ln -s /usr/local/bin/vim /usr/bin/vim
+```
+
+[参考文章](http://mikegrouchy.com/blog/2012/05/compile-vim-with-python-support-on-osx-with-homebrew.html)
 
 
 ### 安装mongodb 并开机启动
