@@ -199,6 +199,14 @@ sudo mv /usr/bin/vim /usr/bin/oldvim
 ln -s /usr/local/bin/vim /usr/bin/vim
 ```
 
+我们更新了vim，但是vi还是原来的版本，有时候出于方便我们希望敲打vi命令的时候调用的是vim~
+可以通过设置别名来达到该目的：
+
+```bash
+# 在.bash_profile(或.zshrc，如果使用zsh的话)文件中添加vi别名
+alias vi = 'vim'
+```
+
 [参考文章](http://mikegrouchy.com/blog/2012/05/compile-vim-with-python-support-on-osx-with-homebrew.html)
 
 
