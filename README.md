@@ -355,7 +355,8 @@ Or, if you don't want/need launchctl, you can just run:
     
     ```
     # restart
-    nginx restart
+    sudo nginx -s stop
+    sudo nginx
     ````
     
 6. 开机启动
