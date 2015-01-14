@@ -400,4 +400,15 @@ Or, if you don't want/need launchctl, you can just run:
   ```
   
   默认目录即上面的root的地方，可以修改成用户目录，例如: /User/lv/www
+  
+  ### npm install xxx报 EACCESS,mkdir错误
+  
+  ~/.npm目录权限问题，
+  
+  ```
+  sudo chown -R $USER:$GROUP ~/.npm
+  npm cache clean
+  ```
+  
+  然后重新试试
 
