@@ -296,6 +296,13 @@ Or, if you don't want/need launchctl, you can just run:
 原因是：
 
 	如果浏览器设置了代理，改host的话要走https,不然还会被reset
+	
+让指定域名自动走https协议：
+
+```
+chrome://net-internals/#hsts
+```
+将指定的域名添加进去
 
 参考文档：http://cn.v2ex.com/t/25512
 
