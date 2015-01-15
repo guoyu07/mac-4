@@ -411,4 +411,9 @@ Or, if you don't want/need launchctl, you can just run:
   ```
   
   然后重新试试
-
+  
+  ### Terminal crashes "pointer being freed was not allocated"
+  
+  原因可能是你改了系统自带的一些路径的权限，例如`/usr/bin/`
+  
+  解决办法是利用打开Disk Utility程序修复磁盘权限
