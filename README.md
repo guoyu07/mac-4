@@ -285,6 +285,9 @@ Or, if you don't want/need launchctl, you can just run:
   sudo launchctl start org.mongo.mongod
   ```
   
+MongoDB升级后可能会出现`'Failed to unlink socket file" error in MongoDB`的错误，
+需要手工删除错误提示中提及的lock文件！
+  
 ### 修改host不生效
 
 ```
