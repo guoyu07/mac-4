@@ -3,6 +3,12 @@ mac
 
 The mac way
 
+
+### Finder（地址栏问题，及其他使用功能）
+
+解决地址栏复制及输入，可安装FinderPath插件(http://www.macupdate.com/app/mac/33870/finderpath)。
+还有一些其他使用功能，可安装XtraFinder插件(http://www.trankynam.com/xtrafinder/)。
+
 ### oh-my-zsh
 
 oh-my-zsh让你的terminal更好看，附带的各种插件（例如git插件）让你的terminal更便捷强悍。
