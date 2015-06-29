@@ -218,84 +218,8 @@ alias vi='vim'
 
 ### 安装mongodb 并开机启动
 
-安装
+[wiki: mongodb安装](https://github.com/mamboer/mac/wiki/mongodb)
 
-```
-brew update
-brew install mongodb
-```
-
-开机启动
-
-按照安装完的提示：
-
-```
-To have launchd start mongodb at login:
-    ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
-Then to load mongodb now:
-    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
-Or, if you don't want/need launchctl, you can just run:
-    mongod --config /usr/local/etc/mongod.conf
-```
-
-其他设置开机启动的方法：
-
-1. 方法1 - StartupItem
-
-  https://github.com/TomK32/mongodb-startupitem-osx  
-
-2. 方法2 - 使用面板操作
-  
-  https://github.com/remysaissy/mongodb-macosx-prefspane
-
-3. 方法3 - LaunchDaemons
-
-  https://github.com/mamboer/MongoDB-OSX-Launchctl
-    
-4. 方法4 - 手把手创建plist文件
-
-  创建/Library/LaunchDaemons/org.mongo.mongod.plist
-  
-  ```
-  <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>Label</key>
-	<string>org.mongo.mongod</string>
-	<key>RunAtLoad</key>
-	<true/>
-	<key>ProgramArguments</key>
-	<array>
-		<string>/usr/local/bin/mongod</string>
-		<string>--dbpath</string>
-		<string>/var/lib/mongodb/</string>
-		<string>--logpath</string>
-		<string>/var/log/mongodb.log</string>
-	</array>
-</dict>
-</plist>
-  ```
-  创建log目录和数据文件目录
-  
-  ```
-  sudo touch /var/log/mongodb.log
-  sudo mkdir /var/lib/mongodb
-  ```
-  
-  运行mongod
-  
-  ```
-  sudo chown root:wheel /Library/LaunchDaemons/org.mongo.mongod.plist
-  sudo launchctl load /Library/LaunchDaemons/org.mongo.mongod.plist
-  sudo launchctl start org.mongo.mongod
-  ```
-  
-MongoDB升级后可能会出现`'Failed to unlink socket file" error in MongoDB`的错误，需要设置权限
-
-```
-sudo chown -R $USER:$GROUP /tmp/ 
-```
   
 ### 修改host不生效
 
