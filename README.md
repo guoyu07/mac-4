@@ -360,3 +360,15 @@ chrome://net-internals/#hsts
   原因可能是你改了系统自带的一些路径的权限，例如`/usr/bin/`
   
   解决办法是利用打开Disk Utility程序修复磁盘权限
+
+### 修改主机名
+
+```
+sudo scutil --set HostName MacBookPro
+```
+
+### 修改电脑共享名
+
+```
+sudo scutil --set ComputerName MacBookPro
+```
