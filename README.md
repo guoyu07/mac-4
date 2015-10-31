@@ -12,7 +12,12 @@ The mac way
 ### oh-my-zsh
 
 oh-my-zsh让你的terminal更好看，附带的各种插件（例如git插件）让你的terminal更便捷强悍。
+
 具体的安装办法请猛击 [这里！！！](https://github.com/robbyrussell/oh-my-zsh)
+
+10.11.1安装后可能会发生不生效的现象，请参考[这里！！](https://medium.com/@mark_design/install-zsh-and-oh-my-zsh-on-osx-10-11-el-capitan-cfaa0ebb97dc#.jmiak9qgg)进行安装。
+
+安装完毕后在`Terminal > Preferences > General > Shell Open With`的地方填写`/usr/local/bin/zsh`
 
 ### homebrew(包管理器)
 
