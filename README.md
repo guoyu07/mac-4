@@ -97,6 +97,10 @@ brew install git
 
 系统自带的node和brew安装的node在同一个位置，直接brew install node安装完会报很多的错误，所以不建议更新系统自带的node!!
 
+> update 2015/10/31 使用[nvm](https://github.com/creationix/nvm)来管理node版本
+
+> curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
+
 我做的操作如下
 
 
