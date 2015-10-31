@@ -224,6 +224,8 @@ alias vi='vim'
 
 [参考文章](http://mikegrouchy.com/blog/2012/05/compile-vim-with-python-support-on-osx-with-homebrew.html)
 
+装完记得装屌屌的[vimrc](https://github.com/amix/vimrc)
+
 
 ### 安装mongodb 并开机启动
 
