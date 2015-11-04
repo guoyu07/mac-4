@@ -27,6 +27,25 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 更多homebrew的信息请猛击 [这里！！！](http://brew.sh/)
 
+### 更新zsh
+
+```
+# check the zsh info
+brew info zsh
+
+# install zsh
+brew install --disable-etcdir zsh
+
+# add shell path
+sudo vim /etc/shells
+
+# add the following line into the very end of the file(/etc/shells)
+/usr/local/bin/zsh
+
+# change default shell
+chsh -s /usr/local/bin/zsh
+```
+
 ### sudo命令无法穿越proxifier代理
 
 ```bash
