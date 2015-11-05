@@ -81,7 +81,7 @@ brew安装的svn软路径是：
 而系统自带的svn路径是：
 
     /usr/bin/svn
-  
+
 为了覆盖系统的svn，我们将新svn的路径添加到PATH环境变量中,并放到/usr/bin前面：
 
 打开.bash_profile文件，添加以下行
@@ -89,9 +89,9 @@ brew安装的svn软路径是：
     export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 注：如果你用的oh-my-zsh，需要修改.zshrc文件而不是.bash_profile
-    
+
     export PATH="/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-    
+
 ### 更新git
 
 和svn类似，mac osx自带的git也比较旧，用类似的方法可将git更新到最新版本
@@ -108,10 +108,10 @@ brew install git
     export PATH=/usr/local/git/bin:$PATH
 
 注：如果你用的oh-my-zsh，需要修改.zshrc文件而不是.bash_profile
-    
+
     export PATH="/usr/local/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-    
-    
+
+
 ### 更新node（不推荐）
 
 系统自带的node和brew安装的node在同一个位置，直接brew install node安装完会报很多的错误，所以不建议更新系统自带的node!!
@@ -157,18 +157,18 @@ sudo brew postinstall node
 
       快捷键：Command+shift+3,这样就截图了整个屏幕，然后截屏的图片保存在桌面上，默认是png格式的。
 
- 
+
 
 截图某个特定的活动窗口：
 
       操作方式：按下快捷键：Command+shift+4+空格
 
- 
+
 
 随意截图：
 
       操作方式：按下快捷键：Command+shift+4，然后通过鼠标来选取要截图的区域，松下鼠标按键即可完成截图，截图同样保存在桌面，默认png格式。
-      
+
 如果想截屏到剪贴板，请在上面的快捷键中多加一个control键！
 
 ### 如何查看iPhone应用崩溃时的日志
@@ -202,8 +202,8 @@ brew install vim
 ```
 
 如果报以下错误：
-        Vim won't build with Python support on OS X 10.9.4 
-        
+        Vim won't build with Python support on OS X 10.9.4
+
 则为10.10系统python的bug，具体可以见这里：[https://github.com/Homebrew/homebrew/issues/32066](https://github.com/Homebrew/homebrew/issues/32066)。暂无解决办法。
 
 安装完成后验证版本：
@@ -250,7 +250,7 @@ alias vi='vim'
 
 [wiki: mongodb安装](https://github.com/mamboer/mac/wiki/mongodb)
 
-  
+
 ### 修改host不生效
 
 ```
@@ -262,7 +262,7 @@ alias vi='vim'
 原因是：
 
 	如果浏览器设置了代理，改host的话要走https,不然还会被reset
-	
+
 让指定域名自动走https协议：
 
 ```
@@ -305,33 +305,33 @@ chrome://net-internals/#hsts
   # 改完后重启
   sudo nginx
   ```
-  
+
 5. 多站点配置
 
   为了灵活配置nginx的站点，可以参考以下配置：
-  
+
   A. 在/usr/local/etc/nginx/下面新建两个目录：sites-available和sites-enabled
-  
+
   B. 在sites-available里面新建default.conf，将nginx.conf里面的默认站点配置的内容拷贝过去，并注释掉原内容
-  
+
   C. 在nginx.conf里面增加以下内容
-    
+
     ```
     include /usr/local/etc/nginx/sites-enabled/*;
     ```
-    
+
   D. 将sites-available目录下的配置建立symlink至site-enabled目录
-    
+
     ln -sfv /usr/local/etc/nginx/sites-available/default.conf /usr/local/etc/nginx/sites-enabled/default.conf
-    
+
   E. 重启nginx服务
-    
+
     ```
     # restart
     sudo nginx -s stop
     sudo nginx
     ````
-    
+
 6. 开机启动
 
   ``` bash
@@ -346,19 +346,19 @@ chrome://net-internals/#hsts
   # detect whether nginx is running
   ps aux | grep nginx
   ```
-  
+
 7. 修改默认的html站点目录
-  
+
   默认的目录在这里：
-  
+
   ```
   /usr/local/Cellar/nginx/1.2.3/html
   ```
-  
+
   其中1.2.3是版本，根据实际按照情况不同
-  
+
   跑去nginx.conf文件中修改默认目录：
-  
+
   ```
   server {
     listen       80;
@@ -371,24 +371,24 @@ chrome://net-internals/#hsts
         index  index.html index.htm;
     }
   ```
-  
+
   默认目录即上面的root的地方，可以修改成用户目录，例如: /User/lv/www
-  
+
   ### npm install xxx报 EACCESS,mkdir错误
-  
+
   ~/.npm目录权限问题，
-  
+
   ```
   sudo chown -R $USER:$GROUP ~/.npm
   npm cache clean
   ```
-  
+
   然后重新试试
-  
+
   ### Terminal crashes "pointer being freed was not allocated"
-  
+
   原因可能是你改了系统自带的一些路径的权限，例如`/usr/bin/`
-  
+
   解决办法是利用打开Disk Utility程序修复磁盘权限
 
 ### 修改主机名
@@ -402,3 +402,25 @@ sudo scutil --set HostName MacBookPro
 ```
 sudo scutil --set ComputerName MacBookPro
 ```
+
+### nvm加速
+
+为了使用淘宝的[nvm镜像](https://github.com/cnpm/cnpm)，我们可以安装`cnpm`代替`npm`命令。
+
+```
+npm install cnpm -g --registry=https://registry.npm.taobao.org
+```
+
+### 设置默认的编辑器
+
+很多应用调用默认编辑器时会使用`$EDITOR`这个环境变量，因此我们可以设置该变量为我们喜欢的编辑器。
+
+例如设置默认编辑为atom：
+
+```
+export EDITOR=atom
+```
+
+或者，右单击某种扩展名的文件来改变其默认打开程序：
+
+> "Get Info" -> "Open with:" -> (Select Atom) -> "Change All"
