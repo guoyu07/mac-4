@@ -3,7 +3,7 @@ mac
 
 The mac way
 
-<h2 style="color:red">此文档不再更新维护</h2>
+## !!!此文档不再更新维护
 
 注意：此文档不再更新维护，新老用户请订阅 [凹凸实验室](http://aotu.io) 的 [MAC全栈开发环境搭建指南](http://aotu.io/mac)
 
